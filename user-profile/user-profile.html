@@ -1,14 +1,14 @@
 <section class="main-container">
 
     <section class="img-container">
-        <img src="images/caveman.jpg">
+        <img ng-src="images/caveman.jpg">
     </section>
 
     <section class="profile-container">
-        <p class="name">{{ $ctrl.profile }}</p>
-        <p class="email">{{ $ctrl.profile }}</p>
-        <p class="bio">{{ $ctrl.profile }}</p>
-        <button class="edit-btn">EDIT</button>
+        <p class="name">{{ $ctrl.profile.name }}</p>
+        <p class="email">{{ $ctrl.profile.contact }}</p>
+        <p class="bio">{{ $ctrl.profile.bio }}</p>
+        <button class="edit-btn" ng-click="$ctrl.editProfile();">EDIT</button>
     </section>
 
 </section>

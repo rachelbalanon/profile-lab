@@ -2,11 +2,12 @@
 
 const editProfile = {
     templateUrl: "edit-profile/edit-profile.html",
-    controller: ["profileService", function(profileService){
+    controller: ["ProfileService", function(ProfileService){
         const vm = this;
-        vm.sendProfile = (person) => {
-            profileService.setProfile(person);
-        };        
+        vm.userProfile = angular.copy(ProfileService.getUserProfile());
+        vm.sendUserProfile = (person) => {
+            ProfileService.setUserProfile(person);
+        };
     }]
 };
 

@@ -2,11 +2,14 @@
 
 const userProfile = {
     templateUrl: "user-profile/user-profile.html",
-    controller: ["profileService", function(profileService){
+    controller: ["ProfileService", function(ProfileService){
         const vm = this;
-        vm.profileService = () => {
-            vm.profile = profileService.getProfile();
-        }
+        
+        vm.profile = ProfileService.getUserProfile();
+        vm.editProfile = () => {
+            ProfileService.editProfile();
+        };
+        
     }]
 }
     

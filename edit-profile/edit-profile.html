@@ -1,12 +1,10 @@
-<form class="form-container">
+<form class="form-container" ng-submit="$ctrl.sendUserProfile($ctrl.userProfile);">
     <p class="instructions">Use the form below to update your profile.</p>
     <label>Name</label>
-    <input type="text" ng-model="$ctrl.person.name">
+    <input type="text" ng-model="$ctrl.userProfile.name">
     <label>Contact</label>
-    <input type="text" ng-model="$ctrl.person.email">
+    <input type="text" ng-model="$ctrl.userProfile.contact">
     <label>Bio</label>
-    <textarea type="text" ng-model="$ctrl.person.bio"></textarea>
-    <button class="update-btn" ng-click="$ctrl.sendProfile($ctrl.person);">UPDATE</button>
-
-    <p>{{ $ctrl.person }}</p>
+    <textarea type="text" ng-model="$ctrl.userProfile.bio"></textarea>
+    <button class="update-btn">UPDATE</button>
 </form>

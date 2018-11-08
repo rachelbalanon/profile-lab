@@ -1,18 +1,30 @@
 "use strict";
 
-function profileService() {
+function ProfileService($location) {
     const self = this;
 
-    self.setProfile = (person) => {
-        self.profile = person;
+    self.userProfile = {
+        name: "Caveman",
+        contact: "caveman@caveman.com",
+        bio: "bark bark bark, hooooooowwwwl!"
     };
 
-    self.getProfile = () => {
-        return self.profile;
+    self.setUserProfile = (person) => {
+        self.userProfile = person;
+        $location.path("/user-profile");
     };
+
+    self.getUserProfile = () => {
+        return self.userProfile;
+    };
+
+    self.editProfile = () => {
+        $location.path("/edit-profile");
+    }
+
 
 }
 
 angular
     .module("App")
-    .service("profileService", profileService);
+    .service("ProfileService", ProfileService);
